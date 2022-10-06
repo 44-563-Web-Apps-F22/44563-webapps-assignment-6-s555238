@@ -19,14 +19,15 @@
 <h2>Musician guess by SumanthReddy Kanukuntla</h2>
 
 <form>
+    <div class="form-group">
     <label for="secret_name">Enter the secret 
         musician name </label>
-    <input type ="password" id="firstname" value="John Lennon"> <br>
+    <input type ="password" id="firstname" value="John Lennon" class="form-control"> <br>
 
     <label for="guess_name">Guess the musician</label>
-    <input type ="text" id="secondname" > <br>
-
-    <input type="button" onclick="checkGuess()" value="Check the guess">
+    <input type ="text" id="secondname" class="form-control"> <br>
+</div>
+    <input type="button" onclick="checkGuess()" value="Check the guess" class="btn btn-primary">
 </form>
 
 

@@ -18,13 +18,14 @@
 <h2>Sumanth Reddy Kanukuntla  computes discounts</h2>
 
 <form>
+    <div class="form-group">
     <label for="baseamount">Enter base amount</label>
-    <input type ="number" id="baseamount" name="baseamount" value=20> <br>
+    <input type ="number" id="baseamount" name="baseamount" value=20 class="form-control"> <br>
 
     <label for="discount">Enter the discount percentage</label>
-    <input type ="number" id="discounts" name="discounts" value=10> <br>
-
-    <input type="button" onclick="discount()" value="Apply discount ">
+    <input type ="number" id="discounts" name="discounts" value=10 class="form-control"> <br>
+</div>
+    <input type="button" onclick="discount()" value="Apply discount "  class="btn btn-primary">
 </form>
 
 <p id="resultdis"></p><br>

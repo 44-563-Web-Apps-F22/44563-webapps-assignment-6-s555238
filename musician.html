@@ -4,6 +4,15 @@
     <title>
         MY ASSIGNMENT ON MUSICIAN
     </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
  </head>
 <body>
 
@@ -29,20 +38,30 @@
 
 
 <script> 
-var correct=0
-var wrong=0
+ correct=0
+ ct=0
+ wrong=0
+
 function checkGuess(){
+    if(ct<3)
+    {
     secretname=document.getElementById("firstname").value;
     guessname=document.getElementById("secondname").value;
     if(secretname===guessname)
     {
         correct=correct+1;
         alert("You got it right");
+        ct=0
     }
     else{
+        ct=ct+1
         wrong=wrong+1;
         alert("Wrong Musician");
     }
+}
+else{
+    sorryGameOver()
+}
     document.getElementById("result").innerHTML="Correct Value="+correct+"  "+"WrongValue="+wrong;
 }
 
@@ -68,6 +87,11 @@ let useImage=1;
                 break;
     
         }
+    }
+
+    function sorryGameOver()
+    {
+        alert("Sorry, game over")
     }
 </script>
 

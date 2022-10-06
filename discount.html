@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<head>
+    <title>Dicount File</title>
+</head>
+<html>
+ 
+<body>
+
+<h2>Sumanth Reddy Kanukuntla  computes discounts</h2>
+
+<form>
+    <label for="baseamount">Enter base amount</label>
+    <input type ="number" id="baseamount" name="baseamount" value=20> <br>
+
+    <label for="discount">Enter the discount percentage</label>
+    <input type ="number" id="discounts" name="discounts" value=10> <br>
+
+    <input type="button" onclick="discount()" value="Apply discount ">
+</form>
+
+<p id="resultdis"></p><br>
+
+
+<form>
+<input  type ="radio" id="times" name="form" onclick="chooseOp()" value=times> 
+<label for="times">*</label><br>
+
+<input onclick="chooseOp()" type ="radio" id="divide" name="form" value=divide> 
+<label for="divide">/</label><br>
+
+<input onclick="chooseOp()" type ="radio" id="exponent" name="form" value="exponent"> 
+<label for="exponent">**</label><br>
+</form>
+<p id="result"></p><br>
+
+
+<script> 
+
+function discount(){
+     base=document.getElementById("baseamount").value;
+     dis=document.getElementById("discounts").value;
+    console.log(dis)
+     res="";
+    base=base-(base*dis/100);
+    for(n=1;n<=5;n++)
+    {
+        
+        res+=base*n+" ";
+    }
+    document.getElementById("resultdis").innerHTML="Discounted amounts for base "+base+" are "+res;
+
+    
+}
+function chooseOp()
+    {
+         base=document.getElementById("baseamount").value;
+         res;
+     dis=document.getElementById("discounts").value;
+    if(document.getElementById("times").checked)
+    {
+        res=base*dis;
+    }
+    else if(document.getElementById("divide").checked)
+    {
+        res=base/dis;
+    }
+    else if(document.getElementById("exponent").checked)
+    {
+        res=base**dis;
+    }
+    document.getElementById("result").innerHTML=res;
+          
+    }
+</script>
+
+</body>
+</html> 

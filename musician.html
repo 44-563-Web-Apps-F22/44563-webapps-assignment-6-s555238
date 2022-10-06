@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <title>
+        MY ASSIGNMENT ON MUSICIAN
+    </title>
+ </head>
+<body>
+
+<h2>Musician guess by SumanthReddy Kanukuntla</h2>
+
+<form>
+    <label for="secret_name">Enter the secret 
+        musician name </label>
+    <input type ="password" id="firstname" value="John Lennon"> <br>
+
+    <label for="guess_name">Guess the musician</label>
+    <input type ="text" id="secondname" > <br>
+
+    <input type="button" onclick="checkGuess()" value="Check the guess">
+</form>
+
+
+<p id="result"></p>
+<div class="container" id="images" onclick="swapImage()">
+    <img id="image" src="aphids.jpg" width="100" height="100"  alt="No image" st/>
+
+</div>
+
+
+<script> 
+var correct=0
+var wrong=0
+function checkGuess(){
+    secretname=document.getElementById("firstname").value;
+    guessname=document.getElementById("secondname").value;
+    if(secretname===guessname)
+    {
+        correct=correct+1;
+        alert("You got it right");
+    }
+    else{
+        wrong=wrong+1;
+        alert("Wrong Musician");
+    }
+    document.getElementById("result").innerHTML="Correct Value="+correct+"  "+"WrongValue="+wrong;
+}
+
+
+let useImage=1;
+    function swapImage(){
+    
+         
+        switch(useImage){
+            case 1:
+                document.getElementById("image").src="aphids.jpg";
+                useImage=2;
+                break;
+            case 2:
+                document.getElementById("image").src="killerwasp.jpg";
+                useImage=3;
+                break;
+            case 3:
+                document.getElementById("image").src="nightcrawler.jpg";
+                useImage=1
+                break;
+            default:
+                break;
+    
+        }
+    }
+</script>
+
+</body>
+</html> 
